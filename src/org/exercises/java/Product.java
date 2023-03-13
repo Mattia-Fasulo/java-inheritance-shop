@@ -75,6 +75,10 @@ public class Product {
 
 
     //METHODS
+    public BigDecimal discount(){
+        BigDecimal discountProduct = price.multiply(new BigDecimal("0.02"));
+        return price.subtract(discountProduct);
+    }
     public int generateId(){
         return generateId(1000);
     }

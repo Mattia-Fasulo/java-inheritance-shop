@@ -9,6 +9,7 @@ public class Cart {
         Scanner scanner = new Scanner(System.in);
 
         int numProducts;
+        BigDecimal total = new BigDecimal("0");
 
         System.out.println("************************");
         System.out.println("Welcome in Java Shop");
@@ -124,9 +125,30 @@ public class Cart {
 
 
             }
+
         }
 
         System.out.println(Arrays.asList(products));
+
+        System.out.println();
+        System.out.print("Do you have a loyalty card? (true/false)");
+        boolean loyalty = Boolean.parseBoolean(scanner.nextLine()) ;
+        System.out.println();
+
+
+
+        if (loyalty){
+            for (Product product : products) {
+                total = total.add(product.discount());
+            }
+
+        } else {
+            for (Product product : products) {
+                total = total.add(product.getPrice());
+            }
+        }
+
+        System.out.println(total);
 
         scanner.close();
     }

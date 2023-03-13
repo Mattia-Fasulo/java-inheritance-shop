@@ -25,6 +25,16 @@ public class Tv extends Product{
 
     }
     //METHOD
+    public BigDecimal discount(){
+
+        BigDecimal discountProduct;
+        if(!smart){
+            discountProduct = getPrice().multiply(new BigDecimal("0.10"));
+        } else {
+            discountProduct = getPrice().multiply(new BigDecimal("0.02"));
+        }
+        return getPrice().subtract(discountProduct);
+    }
 
     @Override
     public String toString() {

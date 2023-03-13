@@ -19,6 +19,21 @@ public class Headset extends Product{
 
 
     //METHODS
+    public BigDecimal discount(){
+
+        BigDecimal discountProduct;
+
+        switch (connection) {
+            case "cablate" -> {
+                discountProduct = getPrice().multiply(new BigDecimal("0.07"));
+            }
+            case "wireless" -> {
+                discountProduct = getPrice().multiply(new BigDecimal("0.02"));
+            }
+            default -> discountProduct = getPrice().multiply(new BigDecimal("0.02"));
+        }
+        return getPrice().subtract(discountProduct);
+    }
 
     @Override
     public String toString() {
