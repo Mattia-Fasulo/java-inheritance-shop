@@ -39,26 +39,24 @@ public class Cart {
             String option = scanner.nextLine();
             System.out.println();
 
-            System.out.print("Insert name: ");
-            String name = scanner.nextLine();
-
-            System.out.print("Insert description: ");
-            String description = scanner.nextLine();
-
-            System.out.print("Insert price: ");
-            BigDecimal price = new BigDecimal(scanner.nextLine());
-
-            System.out.print("Insert iva: ");
-            BigDecimal iva = new BigDecimal(scanner.nextLine());
-
             switch (option) {
                 case "1" -> {
+                    System.out.print("Insert name: ");
+                    String nameSmartphone = scanner.nextLine();
 
+                    System.out.print("Insert description: ");
+                    String descriptionSmartphone = scanner.nextLine();
+
+                    System.out.print("Insert price: ");
+                    BigDecimal priceSmartphone = new BigDecimal(scanner.nextLine());
+
+                    System.out.print("Insert iva: ");
+                    BigDecimal ivaSmartphone = new BigDecimal(scanner.nextLine());
 
                     System.out.print("Size storage: ");
                     int storage = Integer.parseInt(scanner.nextLine());
 
-                    Smartphone smartphone = new Smartphone(name, description, price, iva, storage);
+                    Smartphone smartphone = new Smartphone(nameSmartphone, descriptionSmartphone, priceSmartphone, ivaSmartphone, storage);
                     System.out.println();
 
                     System.out.println(smartphone);
@@ -68,7 +66,17 @@ public class Cart {
 
                 }
                 case "2" -> {
+                    System.out.print("Insert name: ");
+                    String nameTv = scanner.nextLine();
 
+                    System.out.print("Insert description: ");
+                    String descriptionTv = scanner.nextLine();
+
+                    System.out.print("Insert price: ");
+                    BigDecimal priceTv = new BigDecimal(scanner.nextLine());
+
+                    System.out.print("Insert iva: ");
+                    BigDecimal ivaTv = new BigDecimal(scanner.nextLine());
 
                     System.out.print("Size tv: ");
                     int width = Integer.parseInt(scanner.nextLine());
@@ -76,14 +84,24 @@ public class Cart {
                     System.out.print("Smart tv: ");
                     boolean smart = Boolean.parseBoolean(scanner.nextLine());
 
-                    Tv tv = new Tv(name, description, price, iva, width, smart);
+                    Tv tv = new Tv(nameTv, descriptionTv, priceTv, ivaTv, width, smart);
                     System.out.println(tv);
                     System.out.println();
 
                     products[i] = tv;
                 }
                 case "3" -> {
+                    System.out.print("Insert name: ");
+                    String nameHeadset = scanner.nextLine();
 
+                    System.out.print("Insert description: ");
+                    String descriptionHeadset = scanner.nextLine();
+
+                    System.out.print("Insert price: ");
+                    BigDecimal priceHeadset = new BigDecimal(scanner.nextLine());
+
+                    System.out.print("Insert iva: ");
+                    BigDecimal ivaHeadset = new BigDecimal(scanner.nextLine());
 
                     System.out.print("Insert color: ");
                     String color = scanner.nextLine();
@@ -91,7 +109,7 @@ public class Cart {
                     System.out.print("Insert type of connection: ");
                     String connection = scanner.nextLine();
 
-                    Headset headset = new Headset(name, description, price, iva, color, connection);
+                    Headset headset = new Headset(nameHeadset, descriptionHeadset, priceHeadset, ivaHeadset, color, connection);
                     System.out.println(headset);
                     System.out.println();
 
